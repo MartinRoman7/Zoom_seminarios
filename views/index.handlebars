@@ -1,0 +1,140 @@
+<div class="container" style="width: 100%;" id="container">
+    
+    <ol id="breadcrumb" class="breadcrumb" hidden style="margin-left: 8px;"></ol>
+    <div class="row">
+        
+        <div class="col-xs-6 col-sm-12 col-lg-12">
+
+            {{#if success_msg}}
+                <div class="alert alert-success">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <strong>{{success_msg}}</strong>
+                </div>
+            {{/if}}
+            {{#if errors}}
+                {{#each errors}}
+                    <div class="alert alert-danger">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <strong>{{msg}}</strong>
+                    </div>
+                {{/each}}
+            {{/if}}
+
+            <div class="bottom-buffer">
+                    <h2>Registro de seminario</h2>
+            </div>
+
+<form role="form" id="register_seminario" action="/" method="POST">
+    <div class="form-group" style="margin-top: 30px;">
+        <h5>Información general</h5>
+        <br>
+        <div class="input-group mb-3">
+           <div class="input-group-prepend">
+                <label class="input-group-text" for="titulo">Nombre del seminario *</label>
+            </div> 
+	   <input class="form-control" id="titulo" type="text" name="titulo" size="25" value="" autocomplete="off" style="border-color: rgb(204, 204, 204);">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="descripcion">Descripción *</label>
+            </div>
+	    <input class="form-control" id="tema" type="text" name="tema" size="25" value="" autocomplete="off" style="border-color: rgb(204, 204, 204);"> 
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-top: 30px;">
+        <h5>Fecha y hora</h5>
+        <br>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="fecha">Fecha *</label>
+            </div>
+            <input class="form-control" id="fecha" type="date" name="fecha" value="" autocomplete="off" style="border-color: rgb(204, 204, 204);">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="hora_inicio">Hora de inicio (24 hrs) *</label>
+            </div>
+            <select class="custom-select" id="hora_inicio" name="hora_inicio">
+                <option value="" selected disabled></option>
+		<option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+            </select>
+	    <div class="input-group-prepend">
+                <label class="input-group-text" for="minuto_inicio">Minuto de inicio *</label>
+            </div>
+            <select class="custom-select" id="minuto_inicio" name="minuto_inicio">
+                <option value="" selected disabled></option>
+		        <option value="00">00</option>
+                <option value="15">15</option>
+                <option value="30">30</option>
+                <option value="45">45</option>
+            </select>
+	</div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="descripcion">Duración (minutos) *</label>
+            </div>
+	    <input class="form-control" id="duracion" type="number" name="duracion" size="5" value="" min="0" autocomplete="off" style="border-color: rgb(204, 204, 204);"> 
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-top: 30px;">
+        <h5>Correo electrónico de confirmación</h5>
+        <br>
+        <div class="form-group">
+            <div>
+                <input class="form-control" id="email" placeholder="E-Mail" type="email" name="email" size="25" value="" autocomplete="off" style="border-color: rgb(204, 204, 204);">
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- --------------------------------------------------------------------------------------------------------- -->
+
+
+    <div class="clearfix" style="margin-top: 50px; margin-bottom: 50px;">
+        <div class="pull-right">
+            <input class="btn btn-success" form="register_seminario" type="submit" value="Aceptar" style="float: right;">
+    </div>
+    </div>
+
+</form>
+
+</div>
+</div>
+</div>
+
+
