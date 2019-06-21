@@ -50,9 +50,9 @@ router.post('/', (req, res) => {
 
         /** ZOOM API */
         var options = { method: 'POST',
-            url: 'https://api.zoom.us/v2/users/FRESTRELLA@fundacioncarlosslim.org/meetings',
+            url: '<account>',
             headers: {
-                authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6IjUza1VyQllaVHBlMXNTcmt4eTNMMWciLCJleHAiOjI1MjQ2Mjk2MDAsImlhdCI6MTU1NzUwNjk0MH0.43DQlCBp_svL4GU5GndcS7S59yl7jJeofd6P9xvf9uE',
+                authorization: 'Bearer <token>',
                 'content-type': 'application/json' },
             body: { 
                 topic: titulo,
@@ -78,7 +78,7 @@ router.post('/', (req, res) => {
             let url_join = body.join_url;
             let str_titulo = titulo.replace(/ /g, "_");
             let str_descripcion = descripcion.replace(/ /g, "_");
-            var pyProcess = cmd.get('python3 /home/martin/Documentos/Zoom_Seminarios/mail/confirmacion.py ' + url_join + ' ' + fecha + ' ' + hora_minuto + ' ' + str_titulo + ' ' + str_descripcion + ' ' + duracion + ' ' + email, function(data, err, stderr) {
+            var pyProcess = cmd.get('python3 <pwd>/mail/confirmacion.py ' + url_join + ' ' + fecha + ' ' + hora_minuto + ' ' + str_titulo + ' ' + str_descripcion + ' ' + duracion + ' ' + email, function(data, err, stderr) {
                 if (!err) {
                     console.log("data from python script " + data)
                 } else {

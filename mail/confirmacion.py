@@ -20,7 +20,7 @@ email = str(sys.argv[7])
 titulo = str_titulo.replace('_',' ')
 descripcion = str_descripcion.replace('_',' ')
 
-fromaddr = 'Notificaciones Fundación Carlos Slim de la Salud'
+fromaddr = '<name>'
 toaddrs  = email
 
 msg = MIMEMultipart()
@@ -32,8 +32,8 @@ text = '<br><br><hr><h2>&#128276; Su seminario ha sido registrado</h2><hr><br><b
 
 msg.attach( MIMEText(text, 'html') )
 
-username = 'alertas.FCS.salud@gmail.com'
-password = 'Fund4c10nCS123'
+username = '<mail>'
+password = '<password>'
 server = smtplib.SMTP('smtp.gmail.com:587')
 server.ehlo()
 server.starttls()
