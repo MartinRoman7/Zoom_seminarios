@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
     let hora_minuto = hora_inicio+':'+minuto_inicio;
 
     req.checkBody('titulo', 'Titulo del seminario es requerido.').notEmpty();
-    req.checkBody('descripcion', 'Descripción del seminario es requerido.').notEmpty();
+    req.checkBody('tema', 'Descripción del seminario es requerido.').notEmpty();
     req.checkBody('fecha', 'Fecha del seminario es requerida.').notEmpty();
     req.checkBody('hora_inicio', 'Hora de inicio del  seminario es requerida.').notEmpty();
     req.checkBody('minuto_inicio', 'Minuto de inicio del seminario es requerido.').notEmpty();
@@ -86,7 +86,7 @@ router.post('/', (req, res) => {
                 }
             });
 
-            req.flash('success_msg', 'Seminario registrado. Revise su E-mail paar más información.');
+            req.flash('success_msg', 'Seminario registrado. Revise su correo para más información.');
             res.redirect('/');
 
         });
